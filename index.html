@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapevine Garden - Official Website</title>
+    <style>
+        /* Modern Minimalist Creator Theme */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f0f; /* YouTube Dark Mode Background */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff0000; /* Creator Red Accent */
+            margin-bottom: 15px;
+        }
+        h1 { margin: 10px 0 5px 0; font-size: 2.5rem; }
+        .tagline { color: #aaa; font-size: 1.1rem; margin-bottom: 30px; }
+        
+        /* Main Call to Action Button */
+        .cta-btn {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            transition: transform 0.2s, background-color 0.2s;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+        .cta-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
 
+        /* Responsive Embedded Video Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Secondary Social Links Grid */
+        .links-title { font-size: 1.5rem; margin-bottom: 20px; color: #fff; }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+        .social-link {
+            background-color: #212121;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            border: 1px solid #333;
+        }
+        .social-link:hover {
+            background-color: #333;
+            border-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Branding Header -->
+        <img src="https://via.placeholder.com/150" alt="Channel Logo" class="profile-pic">
+        <h1>Grapevine Gadren</h1>
+        <p class="tagline">New videos on gardening.</p>
+        
+        <!-- Direct Subscribe Link (Pro Tip: add ?sub_confirmation=1 to auto-prompt users) -->
+        <a href="https://www.youtube.com/@GrapevineGarden" target="_blank" class="cta-btn">
+            Subscribe on YouTube
+        </a>
+
+        <!-- Featured/Latest Video Section -->
+        <h2 class="links-title">Featured Video</h2>
+        <div class="video-wrapper">
+            <!-- Swap out the ID letters at the end of the URL with your actual YouTube Video ID -->
+            <iframe src="https://www.youtube.com/embed/shorts/TxZ5MDFdqWY" allowfullscreen></iframe>
+        </div>
+
+        <!-- External Link Hub (Linktree Alternative) -->
+        <h2 class="links-title">Find Me Elsewhere</h2>
+        <div class="links-grid">
+            <a href="#" target="_blank" class="social-link">Instagram</a>
+            <a href="#" target="_blank" class="social-link">Twitter / X</a>
+            <a href="#" target="_blank" class="social-link">TikTok</a>
+            <a href="#" target="_blank" class="social-link">Merch Store</a>
+        </div>
+    </div>
+
+</body>
+</html>
