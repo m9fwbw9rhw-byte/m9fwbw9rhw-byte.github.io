@@ -1,281 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grapevine Garden</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapevine Garden - YouTube</title>
+    <style>
+        body {
+            font-family: Roboto, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+        .channel-header {
+            width: 100%;
+        }
 
-<style>
+        .channel-banner {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .channel-info-bar {
+            background-color: white;
+            padding: 16px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e1e1e1;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f8f6f1;
-    color: #333;
-    line-height: 1.7;
-}
+        .channel-info-left {
+            display: flex;
+            align-items: center;
+        }
 
-header {
-    background: #f5f2ea;
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 1px solid #ddd;
-}
+        .profile-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 24px;
+        }
 
-.logo {
-    max-width: 700px;
-    width: 90%;
-}
+        .channel-name {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 0;
+        }
 
-nav {
-    background: white;
-    border-bottom: 1px solid #ddd;
-}
+        .subscriber-count {
+            font-size: 14px;
+            color: #606060;
+            margin: 4px 0 0 0;
+        }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-}
+        .subscribe-button {
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
 
-nav li {
-    margin: 0 20px;
-}
+        .channel-tabs {
+            background-color: white;
+            padding: 0 80px;
+            display: flex;
+            border-bottom: 1px solid #e1e1e1;
+        }
 
-nav a {
-    display: block;
-    padding: 18px 0;
-    text-decoration: none;
-    color: #264d2c;
-    font-weight: 500;
-}
+        .channel-tabs a {
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #606060;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 3px solid transparent;
+        }
 
-nav a:hover {
-    color: #4b7c4d;
-}
+        .channel-tabs a.active {
+            color: #030303;
+            border-bottom: 3px solid #606060;
+        }
 
-.hero {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
+        .main-content {
+            padding: 24px 80px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    color: #264d2c;
-    margin-bottom: 20px;
-}
+        .latest-video-section, .playlists-section {
+            background-color: white;
+            padding: 16px;
+            border-radius: 4px;
+        }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
+        .latest-video-thumbnail {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
 
-.youtube-btn {
-    display: inline-block;
-    background: #264d2c;
-    color: white;
-    text-decoration: none;
-    padding: 16px 28px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: 0.3s;
-}
+        .latest-video-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 8px 0;
+        }
 
-.youtube-btn:hover {
-    background: #3c6b3f;
-}
+        .video-meta {
+            font-size: 14px;
+            color: #606060;
+            margin: 0;
+        }
 
-.hero img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
-}
+        .playlist-item {
+            display: flex;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
 
-.section {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 0 20px;
-    text-align: center;
-}
+        .playlist-thumbnail {
+            width: 120px;
+            height: 68px;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
 
-.section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    color: #264d2c;
-    margin-bottom: 20px;
-}
+        .playlist-details {
+            flex: 1;
+        }
 
-.section p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 1.1rem;
-}
+        .playlist-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+        }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.feature {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.05);
-}
-
-.feature h3 {
-    color: #264d2c;
-    margin-bottom: 15px;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-}
-
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #eef2eb;
-    margin-top: 80px;
-}
-
-footer a {
-    color: #264d2c;
-    text-decoration: none;
-}
-
-@media(max-width:900px){
-
-.hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-}
-
-.features {
-    grid-template-columns: 1fr;
-}
-
-}
-
-</style>
+        .playlist-meta {
+            font-size: 12px;
+            color: #606060;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <img src="IMG_5177.PNG" alt="Grapevine Garden" class="logo">
-</header>
-
-<nav>
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#youtube">YouTube</a></li>
-        <li><a href="#garden">Garden</a></li>
-    </ul>
-</nav>
-
-<section class="hero">
-
-    <div>
-        <h1>Welcome to Grapevine Garden</h1>
-
-        <p>
-            A peaceful corner of the garden sharing the beauty of
-            grapevines, roses, greenhouse growing, and seasonal gardening.
-        </p>
-
-        <a
-          class="youtube-btn"
-          href="https://www.youtube.com/@GardenGrapevine"
-          target="_blank">
-          Visit My YouTube Channel
-        </a>
-    </div>
-
-    <div>
-        <img
-        src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1200&q=80"
-        alt="Garden">
-    </div>
-
-</section>
-
-<section class="section" id="about">
-
-    <h2>About Grapevine Garden</h2>
-
-    <p>
-        Grapevine Garden is a gardening channel dedicated to sharing
-        the beauty of a mature greenhouse grapevine, climbing roses,
-        seasonal flowers and the simple pleasures of garden life.
-    </p>
-
-    <div class="features">
-
-        <div class="feature">
-            <h3>🍇 Grapevines</h3>
-            <p>
-                Follow the progress of a remarkable greenhouse grapevine
-                and seasonal harvests.
-            </p>
+    <header class="channel-header">
+        <img src="IMG_5177.png" alt="Grapevine Garden Channel Banner" class="channel-banner">
+        <div class="channel-info-bar">
+            <div class="channel-info-left">
+                <img src="avatar.jpg" alt="Grapevine Garden Profile Avatar" class="profile-avatar">
+                <div>
+                    <h1 class="channel-name">GrapevineGarden</h1>
+                    <p class="subscriber-count">18.8K subscribers</p>
+                </div>
+            </div>
+            <button class="subscribe-button">Subscribe</button>
         </div>
+        <nav class="channel-tabs">
+            <a href="#" class="active">Home</a>
+            <a href="#">Videos</a>
+            <a href="#">Playlists</a>
+            <a href="#">Community</a>
+            <a href="#">Channels</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
 
-        <div class="feature">
-            <h3>🌹 Roses</h3>
-            <p>
-                Beautiful rose arches, borders and blooms throughout
-                the growing season.
-            </p>
-        </div>
+    <main class="main-content">
+        <section class="latest-video-section">
+            <img src="latest_video_thumb.jpg" alt="Latest Video Thumbnail" class="latest-video-thumbnail">
+            <h2 class="latest-video-title">How To Deten antions For Its Grapevine Garden Renonus</h2>
+            <p class="video-meta">188K views &bull; 7 days ago</p>
+        </section>
 
-        <div class="feature">
-            <h3>🌿 Greenhouse</h3>
-            <p>
-                Explore greenhouse growing and the changing garden
-                through the seasons.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<footer>
-
-    <h3>Let's Grow Together</h3>
-
-    <p>
-        Follow the journey on
-        <a href="https://www.youtube.com/@GardenGrapevine" target="_blank">
-            YouTube @GardenGrapevine
-        </a>
-    </p>
-
-    <br>
-
-    <small>
-        © 2025 Grapevine Garden. All rights reserved.
-    </small>
-
-</footer>
+        <section class="playlists-section">
+            <h2>Playlists</h2>
+            <div class="playlist-item">
+                <img src="playlist1_thumb.jpg" alt="Playlist Thumbnail" class="playlist-thumbnail">
+                <div class="playlist-details">
+                    <p class="playlist-title">Grapevine Garden</p>
+                    <p class="playlist-meta">47.5K views</p>
+                </div>
+            </div>
+            <div class="playlist-item">
+                <img src="playlist2_thumb.jpg" alt="Playlist Thumbnail" class="playlist-thumbnail">
+                <div class="playlist-details">
+                    <p class="playlist-title">Grapevine Garden</p>
+                    <p class="playlist-meta">1.29K views</p>
+                </div>
+            </div>
+            <!-- Add more playlist items here -->
+        </section>
+    </main>
 
 </body>
 </html>
