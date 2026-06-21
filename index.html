@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrapevineGarden | Official Channel Website</title>
-    <meta name="description" content="Official website for GrapevineGarden. Watch our latest gardening videos, tips, and subscribe for more!">
+    <title>Grapevine Garden | Official Channel Website</title>
+    <meta name="description" content="Official website for GrapevineGarden. Watch our latest videos here!">
     
-    <!-- Favicon (YouTube Icon for continuity) -->
     <link rel="icon" type="image/png" href="https://www.youtube.com/s/desktop/28b67e7a/img/favicon_32x32.png" sizes="32x32">
     
     <style>
@@ -34,271 +33,22 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; padding: 0; margin: 0; }
 
-        /* --- HEADER & NAV --- */
+        /* --- HEADER --- */
         header {
-            background-color: var(--primary-green);
-            color: var(--text-light);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
+            /* The image is set as a full-width background here. 
+               This property ensures it scales with the browser. */
+            background: url('image_0.png') no-repeat center center/cover;
+            
+            /* You can adjust this height to control how much of 
+               the image's textured area is visible. */
+            height: 350px; 
+            
+            position: relative;
             z-index: 1000;
             box-shadow: var(--shadow);
-        }
-
-        nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
-
-        .brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .brand img {
-            height: 30px; /* Replace with your logo if you have one, currently uses a text placeholder */
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a:hover {
-            color: var(--light-green);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.9)), 
-                        url('https://images.unsplash.com/photo-1596195748281-c74381533e7e?q=80&w=2000') no-repeat center center/cover;
-            color: var(--text-light);
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .btn-subscribe {
-            background-color: var(--yt-red);
-            color: var(--text-light);
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: var(--transition);
-        }
-
-        .btn-subscribe:hover {
-            background-color: #cc0000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(255,0,0,0.3);
-        }
-
-        /* --- MAIN CONTENT AREAS --- */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        section h2 {
-            border-bottom: 3px solid var(--accent-earth);
-            display: inline-block;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            color: var(--primary-green);
-        }
-
-        /* --- LATEST VIDEO AREA --- */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border-radius: 8px;
-            background-color: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .latest-meta {
-            margin-top: 15px;
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
-
-        /* --- SUBSCRIBE / CALL TO ACTION AREA --- */
-        .subscribe-cta {
-            background-color: var(--light-green);
-            padding: 40px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #d0ebd0;
-        }
-
-        .cta-text h3 {
-            margin: 0 0 10px 0;
-            color: var(--primary-green);
-            font-size: 1.8rem;
-        }
-
-        .cta-text p {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        /* Add a small YouTube Subscribe Button below the large one */
-        .yts-widget-container {
-            margin-top: 15px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #333;
-            color: var(--text-light);
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; } /* Simplified menu for mobile */
-            .subscribe-cta {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- 1. Header & Navigation -->
-    <header>
-        <nav>
-            <div class="brand">
-                <!-- Replace with <img src="your-logo.png" alt="Logo"> if you have one -->
-                🍇 GrapevineGarden
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#latest">Latest Video</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="https://www.youtube.com/@GrapevineGarden" target="_blank" style="color: #ffcccc; font-weight: bold;">Visit YouTube</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- 2. Hero Section -->
-    <div class="hero">
-        <h1>Welcome to GrapevineGarden</h1>
-        <p>Cultivating knowledge, one vine at a time. Join our community for expert gardening guides, harvest tips, and vineyard insights.</p>
-        <a href="https://www.youtube.com/@GrapevineGarden?sub_confirmation=1" target="_blank" class="btn-subscribe">
-            <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="currentColor" d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.73,18.78 17.93,18.84C17.13,18.91 16.44,18.94 15.84,18.94L15,19C12.81,19 11.2,18.84 10.17,18.56C9.27,18.31 8.69,17.73 8.44,16.83C8.31,16.36 8.22,15.73 8.16,14.93C8.09,14.13 8.06,13.44 8.06,12.84L8,12C8,9.81 8.16,8.2 8.44,7.17C8.69,6.27 9.27,5.69 10.17,5.44C10.64,5.31 11.27,5.22 12.07,5.16C12.87,5.09 13.56,5.06 14.16,5.06L15,5C17.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17M19,10H17V12H19V10Z" /></svg>
-            SUBSCRIBE ON YOUTUBE
-        </a>
-    </div>
-
-    <main>
-        <!-- 3. Latest Video Area -->
-        <section id="latest">
-            <h2>Our Latest Guide</h2>
-            <div class="video-container">
-                <!-- !!! INSTRUCTIONS !!! -->
-                <!-- 1. Go to your latest video on YouTube. -->
-                <!-- 2. Click "Share" -> "Embed". -->
-                <!-- 3. Copy the URL inside src="...". -->
-                <!-- 4. Paste it below, replacing the placeholder URL. -->
-                <iframe 
-                    src="https://www.youtube.com/embed?listType=user_uploads&list=GrapevineGarden" 
-                    title="Latest Video from GrapevineGarden"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
-                <!-- The URL used above is a dynamic playlist of your uploads. -->
-                <!-- It *should* show your latest video automatically. -->
-            </div>
-            <div class="latest-meta">
-                <p>We post new videos weekly focusing on sustainable gardening, vineyard management, and seasonal planting.</p>
-            </div>
-        </section>
-
-        <!-- 4. Channel Description Area -->
-        <section id="about">
-            <h2>About the Channel</h2>
-            <p>Welcome to <strong>GrapevineGarden</strong>! Our mission is to share practical, hands-on advice for gardeners of all levels. Whether you are tending a single balcony pot or managing a full vineyard, we provide the insights you need to make your garden thrive.</p>
-            <p>We cover topics including soil health, pruning techniques (especially grapes!), organic pest control, and harvesting guides.</p>
-        </section>
-
-        <!-- 5. Direct Subscribe Area -->
-        <section id="subscribe">
-            <div class="subscribe-cta">
-                <div class="cta-text">
-                    <h3>Never Miss a Harvest</h3>
-                    <p>Subscribe to get notified every time we release a new gardening tutorial.</p>
-                    
-                    <!-- YouTube official subscribe widget -->
-                    <div class="yts-widget-container">
-                        <script src="https://apis.google.com/js/platform.js"></script>
-                        <div class="g-ytsubscribe" data-channelid="UC--YOUR-CHANNEL-ID-HERE--" data-layout="default" data-count="default"></div>
-                        
-                        <!-- !!! IMPORTANT INSTRUCTIONS !!! -->
-                        <!-- 1. You MUST replace UC--YOUR-CHANNEL-ID-HERE-- with your actual Channel ID. -->
-                        <!-- You can find it at: youtube.com/account_advanced -->
-                        <!-- If you don't do this, the tiny button won't work. -->
-                    </div>
-                </div>
-                <a href="https://www.youtube.com/@GrapevineGarden?sub_confirmation=1" target="_blank" class="btn-subscribe">
-                    SUBSCRIBE NOW
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 6. Footer -->
-    <footer>
-        <p>&copy; 2023 GrapevineGarden. All rights reserved.</p>
-        <p>This is an official channel website promoting <a href="https://youtube.com/@GrapevineGarden" target="_blank" style="text-decoration: underline; color: #aaa;">youtube.com/@GrapevineGarden</a>.</p>
-    </footer>
-
-</body>
-</html>
+        
+        /* This is a small adjustment
