@@ -3,96 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grapevine Garden - Official Website</title>
+    <title>Grapevine Garden | YouTube Channel</title>
     <style>
+        /* Modern CSS Variables for easy customization */
         :root {
-            --primary-color: #4a6741; /* Garden green theme */
-            --accent-color: #8b008b;  /* Grape/flower accent */
-            --light-bg: #f4f7f3;
-            --text-dark: #333;
-        }       
-        
-        body {
+            --primary-color: #2e7d32; /* Garden Green */
+            --accent-color: #8e24aa;  /* Grape Purple */
+            --dark-color: #212121;
+            --light-color: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            text-align: center;
         }
 
-        /* Updated header to showcase your custom image banner */
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Header / Hero Section */
         header {
-            background-color: var(--primary-color);
-            padding: 0;
-            margin: 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            overflow: hidden;
+            background: url('IMG_5177.PNG') no-repeat center center/cover;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
-        .header-banner {
+        /* Overlay to make sure text/elements stand out if needed */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1200px; /* Limits size on ultra-wide screens */
-            height: auto;
-            display: block;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); 
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        main {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .cta-section {
+        /* About Section */
+        .about-section {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
             margin-bottom: 40px;
         }
 
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            color: #555;
+        }
+
+        /* Call to Action Button */
         .btn-subscribe {
             display: inline-block;
             background-color: #ff0000; /* YouTube Red */
-            color: white;
-            padding: 15px 35px;
-            font-size: 1.2rem;
+            color: var(--white);
+            padding: 12px 30px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            border-radius: 30px;
+            font-size: 1.1rem;
             transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
         }
 
         .btn-subscribe:hover {
-            transform: scale(1.05);
             background-color: #cc0000;
+            transform: translateY(-2px);
         }
 
-        .video-section {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        /* Shorts Section */
+        .shorts-section {
+            text-align: center;
         }
 
-        .video-section h2 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 20px;
+        .shorts-section h2 {
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
         }
 
-        /* Responsive container for vertical YouTube Short */
-        .video-container {
-            position: relative;
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-            padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
+        /* Grid layout for YouTube Shorts (Vertical 9:16 aspect ratio) */
+        .shorts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .short-card {
+            background: var(--white);
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+            padding-top: 177.77%; /* 9:16 Aspect Ratio for Shorts */
         }
 
-        .video-container iframe {
+        .short-card iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -101,50 +134,66 @@
             border: 0;
         }
 
+        /* Footer */
         footer {
-            margin-top: 60px;
-            padding: 20px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
             font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #ddd;
+            color: #777;
+            border-top: 1px solid #e0e0e0;
         }
 
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header {
+                height: 25vh;
+            }
+            .about-section {
+                padding: 25px 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="IMG_5177.PNG" alt="Grapevine Garden Banner" class="header-banner">
-    </header>
+    <header></header>
 
-    <main>
-        <section class="cta-section">
-            <a href="https://www.youtube.com/@grapevinegarden?sub_confirmation=1" target="_blank" class="btn-subscribe">
-                Subscribe on YouTube
+    <div class="container">
+        
+        <section class="about-section">
+            <h2>Welcome to Grapevine Garden</h2>
+            <p>
+                Welcome to my corner of the internet! Here at Grapevine Garden, I share my passion for gardening, plant care tips, and bite-sized nature inspiration. Whether you have a massive backyard or a few windowsill pots, there's something here to help your green spaces thrive.
+            </p>
+            <a href="youtube.com/@grapevinegarden" target="_blank" class="btn-subscribe">
+                🔴 Subscribe on YouTube
             </a>
         </section>
 
-        <section class="video-section">
-            <h2>Latest Short: Watch Now</h2>
-            <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/TxZ5MDFdqWY" 
-                    title="Rose arch, climbing rose - Generous Gardener David Austin"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                </iframe>
+        <section class="shorts-section">
+            <h2>Latest Shorts</h2>
+            <div class="shorts-grid">
+                
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
             </div>
         </section>
-    </main>
-      
 
+    </div>
 
     <footer>
-        <p>&copy; 2026 Grapevine Garden. Visit the official channel at <a href="https://www.youtube.com/@grapevinegarden" target="_blank">YouTube.com/@grapevinegarden</a></p>
+        <p>&copy; 2026 Grapevine Garden. All rights reserved.</p>
     </footer>
 
 </body>
