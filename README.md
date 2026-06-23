@@ -4,7 +4,7 @@ Official website for the Grapevine Garden YouTube channel.
 
 ## About
 
-Grapevine Garden shares videos and photos of a mature greenhouse grapevine, roses, seasonal flowers and garden life.
+Grapevine Garden shares videos of a mature greenhouse grapevine, roses and garden life.
 
 ## Website
 
