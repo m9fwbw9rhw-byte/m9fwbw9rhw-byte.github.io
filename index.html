@@ -1,223 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grapevine Garden | YouTube Channel</title>
-    <style>
-        /* Modern CSS Variables for easy customization */
-        :root {
-            --primary-color: #2e7d32; /* Garden Green */
-            --accent-color: #8e24aa;  /* Grape Purple */
-            --dark-color: #212121;
-            --light-color: #f5f5f5;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<title>Grapevine Garden</title>
 
-        body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* Header / Hero Section */
-        header {
-            background: url('IMG_5177.PNG') no-repeat center center/cover;
-            height: 40vh;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        /* Overlay to make sure text/elements stand out if needed */
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2); 
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+<style>
 
-        /* About Section */
-        .about-section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .about-section h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 2rem;
-        }
-
-        .about-section p {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 25px auto;
-            color: #555;
-        }
-
-        /* Call to Action Button */
-        .btn-subscribe {
-            display: inline-block;
-            background-color: #ff0000; /* YouTube Red */
-            color: var(--white);
-            padding: 12px 30px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
-        }
-
-        .btn-subscribe:hover {
-            background-color: #cc0000;
-            transform: translateY(-2px);
-        }
-
-        .btn-grapevine {
-    display: inline-block;
-    background-color: var(--accent-color); /* Purple */
-    color: var(--white);
-    padding: 12px 30px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    margin-left: 10px; /* Puts some space between the two buttons */
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 10px rgba(142, 36, 170, 0.3);
+:root{
+    --green:#31512d;
+    --light:#f7f5ef;
+    --dark:#1f2a1f;
+    --accent:#56784d;
 }
 
-.btn-grapevine:hover {
-    background-color: #6a1b9a;
-    align: center;
-    transform: translateY(-2px);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-        /* Shorts Section */
-        .shorts-section {
-            text-align: center;
-        }
 
-        .shorts-section h2 {
-            color: var(--accent-color);
-            margin-bottom: 30px;
-            font-size: 2rem;
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.7;
+}
 
-        /* Grid layout for YouTube Shorts (Vertical 9:16 aspect ratio) */
-        .shorts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+a{
+    text-decoration:none;
+}
 
-        .short-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: relative;
-            padding-top: 177.77%; /* 9:16 Aspect Ratio for Shorts */
-        }
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
 
-        .short-card iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+/* HEADER */
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #777;
-            border-top: 1px solid #e0e0e0;
-        }
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            header {
-                height: 25vh;
-            }
-            .about-section {
-                padding: 25px 15px;
-            }
-        }
-    </style>
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo img{
+    height:75px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    color:var(--green);
+    font-weight:600;
+}
+
+.youtube-btn{
+    background:#d62828;
+    color:white;
+    padding:12px 18px;
+    border-radius:40px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:85vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:650px;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    line-height:0.95;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.cta{
+    display:inline-block;
+    background:#5e8c57;
+    color:white;
+    padding:16px 32px;
+    border-radius:40px;
+    font-weight:600;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--green);
+    font-size:3rem;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+}
+
+/* VIDEOS */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.video-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.video-card iframe{
+    width:100%;
+    aspect-ratio:9/16;
+    border:none;
+}
+
+.video-card h3{
+    padding:15px;
+    color:var(--green);
+}
+
+/* FEATURE */
+
+.feature{
+    background:#eef2ea;
+}
+
+.feature-box{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.feature-box h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:var(--green);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer a{
+    color:white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-    <header></header>
+<header>
 
-    <div class="container">
-        
-        <section class="about-section">
-            <h2>Welcome to Grapevine Garden</h2>
-            <p>
-                This is the official website for the Grapevine Garden YouTube Channel.
-                <p>
-                The Edwardian greenhouse is home to a large grapevine, which we think is over 50 years old.  We post videos about the vine, roses and the garden.
-                <p>
-                Don't forget to subscribe for the latest news and videos!
-            </p>
-        <a href="https://www.youtube.com/@GrapevineGarden?sub_confirmation=1" target="_blank" class="btn-subscribe">
-    🔴 Subscribe on YouTube
-</a>      
-        </section>
+<div class="container navbar">
 
-                <section class="shorts-section">
-            <h2>Latest Shorts</h2>
-            <div class="shorts-grid">
-                
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/TxZ5MDFdqWY" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+<div class="logo">
+<img src="images/logo.jpg" alt="Grapevine Garden">
+</div>
 
-                <div class="short-card">
-                    <iframe src="https://youtube.com/embed/aPQ04QgDzxQ" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#grapevine">The Grapevine</a></li>
+</ul>
+</nav>
 
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/_S7lDDoAHK4" title="Grapevine Garden Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+<a class="youtube-btn"
+href="https://youtube.com/@GardenGrapevine"
+target="_blank">
+YouTube Channel
+</a>
 
-            </div>
-        </section>
+</div>
 
-    </div>
+</header>
 
-    <footer>
-        <p>&copy; 2026 Grapevine Garden. All rights reserved.</p>
-    </footer>
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>Grapevine Garden</h1>
+
+<p>
+A peaceful greenhouse garden featuring a mature grapevine,
+roses and seasonal beauty throughout the year.
+</p>
+
+<a href="https://youtube.com/@GardenGrapevine"
+target="_blank"
+class="cta">
+Watch on YouTube
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>About Grapevine Garden</h2>
+</div>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80">
+
+<div class="about-text">
+
+<p>
+Welcome to Grapevine Garden.
+</p>
+
+<p>
+This channel follows a remarkable greenhouse grapevine,
+beautiful roses and the changing seasons of an English garden.
+</p>
+
+<p>
+Enjoy relaxing videos, garden tours and updates from one of
+the garden's most treasured features: a mature grapevine that
+has been growing for over 50 years.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="feature" id="grapevine">
+
+<div class="container">
+
+<div class="feature-box">
+
+<h2>The 50-Year-Old Grapevine</h2>
+
+<p>
+The heart of Grapevine Garden is a mature grapevine that fills
+the greenhouse with lush growth and abundant harvests each year.
+Follow its journey through the seasons and discover how one vine
+can transform an entire greenhouse.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="videos">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Latest Shorts</h2>
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+<iframe
+src="https://www.youtube.com/embed?listType=user_uploads&list=GardenGrapevine">
+</iframe>
+<h3>Latest Videos</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Grapevine Garden</h3>
+
+<p>
+Growing grapes, roses and seasonal beauty.
+</p>
+
+<br>
+
+<a href="https://youtube.com/@GardenGrapevine">
+Visit the YouTube Channel →
+</a>
+
+<br><br>
+
+<p>© 2025 Grapevine Garden</p>
+
+</footer>
 
 </body>
 </html>
+
