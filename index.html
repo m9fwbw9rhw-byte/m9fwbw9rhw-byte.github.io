@@ -1,308 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grapevine Garden - Official Website</title>
-    <style>
-        /* Base Styling & Textured Background */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f1ea;
-            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
-            background-size: 24px 24px;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Layout Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+<title>Grapevine Garden</title>
 
-        /* Header & Navigation */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 1px solid #e0dbcf;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .logo-area img {
-            max-height: 120px;
-            width: auto;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        nav a {
-            text-decoration: none;
-            color: #2f4f2f;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            margin-left: 20px;
-            transition: color 0.2s;
-        }
+<style>
 
-        nav a:hover {
-            color: #4a7c59;
-        }
+:root{
+    --green:#31512d;
+    --light:#f7f5ef;
+    --dark:#1f2a1f;
+    --accent:#56784d;
+}
 
-        /* Hero / Main Feature Section */
-        .hero {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 25px;
-            align-items: center;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.7;
+}
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+a{
+    text-decoration:none;
+}
 
-        .hero-text h1 {
-            color: #2f4f2f;
-            margin-top: 0;
-            font-size: 2rem;
-        }
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
 
-        .hero-text p {
-            line-height: 1.6;
-            color: #555;
-        }
+/* HEADER */
 
-        /* Three-Column Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 0.8fr;
-            gap: 25px;
-            margin-bottom: 40px;
-        }
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
 
-        .card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
 
-        .card h3 {
-            color: #2f4f2f;
-            border-bottom: 2px solid #e8e4da;
-            padding-bottom: 8px;
-            margin-top: 0;
-        }
+.logo img{
+    height:75px;
+}
 
-        /* Video List Styles */
-        .video-item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
 
-        .thumb-placeholder {
-            width: 100px;
-            height: 60px;
-            background: #4a7c59;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
+nav a{
+    color:var(--green);
+    font-weight:600;
+}
 
-        .video-info h4 {
-            margin: 0 0 5px 0;
-            font-size: 0.95rem;
-        }
+.youtube-btn{
+    background:#d62828;
+    color:white;
+    padding:12px 18px;
+    border-radius:40px;
+}
 
-        .video-info p {
-            margin: 0;
-            font-size: 0.8rem;
-            color: #777;
-        }
+/* HERO */
 
-        /* Links List Styles */
-        .links-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+.hero{
+    min-height:85vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
 
-        .links-list li {
-            margin-bottom: 12px;
-        }
+.hero-content{
+    max-width:650px;
+    color:white;
+}
 
-        .links-list a {
-            color: #4a7c59;
-            text-decoration: none;
-            font-weight: 500;
-        }
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    line-height:0.95;
+    margin-bottom:20px;
+}
 
-        .links-list a:hover {
-            text-decoration: underline;
-        }
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
 
-        /* Sidebar / Call to Action */
-        .btn-subscribe {
-            display: block;
-            background: #2f4f2f;
-            color: #fff;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.2s;
-            margin-bottom: 20px;
-        }
+.cta{
+    display:inline-block;
+    background:#5e8c57;
+    color:white;
+    padding:16px 32px;
+    border-radius:40px;
+    font-weight:600;
+}
 
-        .btn-subscribe:hover {
-            background: #1e331e;
-        }
+/* SECTIONS */
 
-        .profile-card {
-            text-align: center;
-        }
+section{
+    padding:90px 0;
+}
 
-        .profile-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-            border: 3px solid #4a7c59;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid #e0dbcf;
-            font-size: 0.85rem;
-            color: #777;
-        }
+.section-title h2{
+    font-family:'Cormorant Garamond',serif;
+    color:var(--green);
+    font-size:3rem;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 900px) {
-            .hero, .content-grid {
-                grid-template-columns: 1fr;
-            }
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-            nav a {
-                margin: 0 10px;
-            }
-        }
-    </style>
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text p{
+    margin-bottom:20px;
+}
+
+/* VIDEOS */
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.video-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.video-card iframe{
+    width:100%;
+    aspect-ratio:9/16;
+    border:none;
+}
+
+.video-card h3{
+    padding:15px;
+    color:var(--green);
+}
+
+/* FEATURE */
+
+.feature{
+    background:#eef2ea;
+}
+
+.feature-box{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.feature-box h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    color:var(--green);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+footer a{
+    color:white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+</style>
 </head>
 <body>
 
+<header>
+
+<div class="container navbar">
+
+<div class="logo">
+<img src="images/logo.jpg" alt="Grapevine Garden">
+</div>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#videos">Videos</a></li>
+<li><a href="#grapevine">The Grapevine</a></li>
+</ul>
+</nav>
+
+<a class="youtube-btn"
+href="https://youtube.com/@GrapevineGarden"
+target="_blank">
+YouTube Channel
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
 <div class="container">
 
-    <header>
-        <div class="logo-area">
-            <img src="logo.png" alt="Grapevine Garden Logo">
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Latest Videos</a>
-            <a href="#">Gardening Tips</a>
-            <a href="#">Store</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<div class="hero-content">
 
-    <section class="hero">
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        </div>
-        <div class="hero-text">
-            <h1>Welcome to the Greenhouse</h1>
-            <p>Explore our deep-dive tutorials on cultivating the perfect grapevine canopy, maintaining historic greenhouses, and turning your seasonal harvest into a masterpiece. Don't forget to subscribe for weekly backyard updates!</p>
-        </div>
-    </section>
+<h1>Grapevine Garden</h1>
 
-    <main class="content-grid">
-        
-        <div class="card">
-            <h3>Latest from the Garden</h3>
-            
-            <div class="video-item">
-                <div class="thumb-placeholder">Video</div>
-                <div class="video-info">
-                    <h4>How to Prune Old Vines</h4>
-                    <p>Mastering structural and seasonal cuts.</p>
-                </div>
-            </div>
+<p>
+A peaceful greenhouse garden featuring a mature grapevine,
+roses and seasonal beauty throughout the year.
+</p>
 
-            <div class="video-item">
-                <div class="thumb-placeholder">Video</div>
-                <div class="video-info">
-                    <h4>My Grape Harvest 2026</h4>
-                    <p>A look at this year's brix levels and yield.</p>
-                </div>
-            </div>
+<a href="https://youtube.com/@GrapevineGarden"
+target="_blank"
+class="cta">
+Watch on YouTube
+</a>
 
-            <div class="video-item">
-                <div class="thumb-placeholder">Video</div>
-                <div class="video-info">
-                    <h4>Greenhouse Pest Control</h4>
-                    <p>Organic strategies to protect young shoots.</p>
-                </div>
-            </div>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>Featured Guides</h3>
-            <ul class="links-list">
-                <li><a href="#">&rarr; Soil Composition Basics for Vitis Vinifera</a></li>
-                <li><a href="#">&rarr; Choosing the Right Glass for Vintage Greenhouses</a></li>
-                <li><a href="#">&rarr; Winterization Checklist for Northern Climates</a></li>
-                <li><a href="#">&rarr; Propagation: Rooting Hardwood Cuttings</a></li>
-            </ul>
-        </div>
+</div>
 
-        <div class="sidebar">
-            <a href="youtube.com/@GrapevineGarden" class="btn-subscribe" target="_blank">Subscribe on YouTube</a>
-            
-            <div class="card profile-card">
-                <div style="width:80px; height:80px; background:#4a7c59; border-radius:50%; margin:0 auto 15px auto; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">GG</div>
-                <h4>Meet Your Guide</h4>
-                <p style="font-size: 0.85rem; color: #555; margin: 0;">Sharing modern techniques for traditional vineyard spaces right from the backyard greenhouse.</p>
-            </div>
-        </div>
+</section>
 
-    </main>
+<section id="about">
 
-    <footer>
-        <p>&copy; 2026 Grapevine Garden. All rights reserved.</p>
-        <p>Official Hub for <a href="youtube.com/@GrapevineGarden" style="color: #2f
+<div class="container">
+
+<div class="section-title">
+<h2>About Grapevine Garden</h2>
+</div>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80">
+
+<div class="about-text">
+
+<p>
+Welcome to Grapevine Garden.
+</p>
+
+<p>
+This channel follows a remarkable greenhouse grapevine,
+beautiful roses and the changing seasons of an English garden.
+</p>
+
+<p>
+Enjoy relaxing videos, garden tours and updates from one of
+the garden's most treasured features: a mature grapevine that
+has been growing for over 50 years.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="feature" id="grapevine">
+
+<div class="container">
+
+<div class="feature-box">
+
+<h2>The 50-Year-Old Grapevine</h2>
+
+<p>
+The heart of Grapevine Garden is a mature grapevine that fills
+the greenhouse with lush growth and abundant harvests each year.
+Follow its journey through the seasons and discover how one vine
+can transform an entire greenhouse.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="videos">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Latest Shorts</h2>
+</div>
+
+<div class="video-grid">
+
+<div class="video-card">
+<iframe
+src="https://www.youtube.com/embed?listType=user_uploads&list=GrapevineGarden">
+</iframe>
+<h3>Latest Videos</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Grapevine Garden</h3>
+
+<p>
+Growing grapes, roses and seasonal beauty.
+</p>
+
+<br>
+
+<a href="https://youtube.com/@GrapevineGarden">
+Visit the YouTube Channel →
+</a>
+
+<br><br>
+
+<p>© 2025 Grapevine Garden</p>
+
+</footer>
+
+</body>
+</html>
