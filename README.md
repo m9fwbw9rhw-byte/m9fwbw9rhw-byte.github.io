@@ -12,4 +12,4 @@ https://grapevinegarden.co.uk
 
 ## YouTube
 
-https://www.youtube.com/@GardenGrapevine
+https://www.youtube.com/@GrapevineGarden
